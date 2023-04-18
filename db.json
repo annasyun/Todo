@@ -12,11 +12,6 @@
     },
     {
       "isCompleted": false,
-      "content": "json 서버 연결",
-      "id": 3
-    },
-    {
-      "isCompleted": false,
       "content": "투두리스트 조회",
       "id": 4
     },
@@ -24,6 +19,11 @@
       "isCompleted": false,
       "content": "투두리스트 추가",
       "id": 5
+    },
+    {
+      "content": "투두리스트 삭제",
+      "isCompleted": false,
+      "id": 6
     }
   ]
 }

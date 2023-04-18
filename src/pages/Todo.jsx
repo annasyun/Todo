@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { getTodosAxios } from "../api/todos";
+import { getTodosAxios, postTodosAxios } from "../api/todos";
 import useInput from "../hooks/useInput";
 import TodoList from "../components/TodoList";
+import NewTodoForm from "../components/NewTodoForm";
 
 export default function Todo() {
   const [todoValue] = useInput("");
@@ -17,8 +18,13 @@ export default function Todo() {
     getTodos();
   }, []);
 
-  const handleSubmit = () => {
-    console.log("todoValue", todoValue.value);
+  const handleSubmit = async () => {
+    const res = await postTodosAxios({
+      isCompleted: false,
+      content: todoValue.value,
+    });
+    getTodos();
+    todoValue.setValue("");
   };
 
   return (
@@ -34,20 +40,8 @@ export default function Todo() {
         </nav>
       </header>
       <main>
-        <TodoList todoList={todoList} />
-        <form action="" method="get" onSubmit={handleSubmit}>
-          <label className="ir" htmlFor="inp-text">
-            <input
-              id="inp-text"
-              value={todoValue.value}
-              onChange={todoValue.onchange}
-              type="text"
-            />
-          </label>
-          <label className="ir" htmlFor="inp-btn">
-            <input id="inp-btn" type="submit" value={"add"} />
-          </label>
-        </form>
+        <TodoList todoList={todoList} getTodos={getTodos} />
+        <NewTodoForm handleSubmit={handleSubmit} todoValue={todoValue} />
       </main>
     </>
   );
