@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { getTodosAxios } from "../api/todos";
+import NewTodoForm from "../components/Form/NewTodoForm";
+import Header from "../components/Header/Header";
 import TodoList from "../components/TodoList";
 
 export default function CompletedTodo() {
   const [completedTodos, setCompletedTodos] = useState([]);
-  const [completionPg, setCompletionPg] = useState(true);
 
   const getTodos = async () => {
     const res = await getTodosAxios();
     setCompletedTodos(res.data.filter((todo) => todo.isCompleted));
   };
+
   useEffect(() => {
     getTodos();
   }, []);
@@ -18,11 +20,11 @@ export default function CompletedTodo() {
   return (
     <div>
       완료됐당!
-      <TodoList
-        getTodos={getTodos}
-        completedTodos={completedTodos}
-        completionPg={completionPg}
-      />
+      <Header title={"CompletedTodo"} />
+      <main>
+        <TodoList getTodos={getTodos} todoList={completedTodos} />
+        <NewTodoForm getTodos={getTodos} />
+      </main>
     </div>
   );
 }

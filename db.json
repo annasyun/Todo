@@ -2,7 +2,7 @@
   "todos": [
     {
       "content": "포케 먹기",
-      "isCompleted": false,
+      "isCompleted": true,
       "id": 1
     },
     {
@@ -11,9 +11,29 @@
       "id": 2
     },
     {
-      "isCompleted": false,
       "content": "저녁먹기",
+      "isCompleted": true,
       "id": 3
+    },
+    {
+      "content": "헤더분리",
+      "isCompleted": true,
+      "id": 4
+    },
+    {
+      "content": "폼 분리",
+      "isCompleted": true,
+      "id": 5
+    },
+    {
+      "isCompleted": false,
+      "content": "말씀읽기",
+      "id": 6
+    },
+    {
+      "isCompleted": false,
+      "content": "미완료탭이동",
+      "id": 7
     }
   ]
 }
