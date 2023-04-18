@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getTodosAxios } from "../api/todos";
 import useInput from "../hooks/useInput";
+import TodoList from "../components/TodoList";
 
 export default function Todo() {
   const [todoValue] = useInput("");
@@ -33,25 +34,19 @@ export default function Todo() {
         </nav>
       </header>
       <main>
-        메인:todoitem들이 리스트 형태로 뿌려지는 곳
+        <TodoList todoList={todoList} />
         <form action="" method="get" onSubmit={handleSubmit}>
-          {/* <label className="ir" htmlFor="inp-checkbox">
-            checkbox
-          </label>
-          <input id="inp-checkbox" type="checkbox" /> */}
           <label className="ir" htmlFor="inp-text">
-            text
+            <input
+              id="inp-text"
+              value={todoValue.value}
+              onChange={todoValue.onchange}
+              type="text"
+            />
           </label>
-          <input
-            id="inp-text"
-            value={todoValue.value}
-            onChange={todoValue.onchange}
-            type="text"
-          />
           <label className="ir" htmlFor="inp-btn">
-            btn
+            <input id="inp-btn" type="submit" value={"add"} />
           </label>
-          <input id="inp-btn" type="submit" value={"add"} />
         </form>
       </main>
     </>
