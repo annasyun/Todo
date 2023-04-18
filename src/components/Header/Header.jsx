@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Header.module.css";
 import { BsFillMoonFill } from "react-icons/bs";
-
+import { FcIdea } from "react-icons/fc";
 export default function Header({ title, place }) {
   const navigate = useNavigate();
+  const [isDark, setIsDark] = useState(false);
 
   const NavigateToAll = () => {
     navigate("/");
@@ -18,11 +19,22 @@ export default function Header({ title, place }) {
     navigate("/completion");
   };
 
+  const handleDark = () => {
+    setIsDark(!isDark);
+  };
+  console.log(isDark);
+
   return (
-    <header className={styles["header-app"]}>
+    <header
+      className={`${styles["header-app"]} ${isDark ? styles["dark-mode"] : ""}`}
+    >
       {title === "allTodo" && <h1 className="ir">Todo</h1>}
       <h2 className="ir">{title}</h2>
-      <BsFillMoonFill />
+      {isDark ? (
+        <FcIdea className="img-sun" onClick={handleDark} />
+      ) : (
+        <BsFillMoonFill onClick={handleDark} />
+      )}
       <nav className={styles["navbar"]}>
         <ul className={styles["list-navbar"]}>
           <li

@@ -9,6 +9,10 @@
   border-top-right-radius: 1rem;
 }
 
+.dark-mode {
+  background-color: #1c1e3b;
+}
+
 .navbar {
   width: 45%;
 }

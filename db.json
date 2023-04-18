@@ -21,9 +21,14 @@
       "id": 6
     },
     {
-      "isCompleted": false,
       "content": "미완료탭이동",
+      "isCompleted": true,
       "id": 7
+    },
+    {
+      "isCompleted": false,
+      "content": "다크모드 구현",
+      "id": 8
     }
   ]
 }
