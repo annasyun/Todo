@@ -1,4 +1,4 @@
-import ListItem from "./ListItem";
+import ListItem from "./ListItem/ListItem";
 
 export default function TodoList({ todoList, getTodos }) {
   return (
@@ -9,6 +9,7 @@ export default function TodoList({ todoList, getTodos }) {
             key={v.id}
             content={v.content}
             id={v.id}
+            isCompleted={v.isCompleted}
             getTodos={getTodos}
           />
         );
