@@ -1,11 +1,16 @@
 import { useState } from "react";
-import { deleteTodosAxios } from "../../api/todos";
+import { deleteTodosAxios, updateTodosAxios } from "../../api/todos";
 import styles from "./ListItem.module.css";
 
 export default function ListItem({ content, id, getTodos, isCompleted }) {
   const [completion, SetCompletion] = useState(isCompleted);
-  const handleCompletion = () => {
+  const handleCompletion = async () => {
     SetCompletion(!completion);
+    await updateTodosAxios(id, {
+      content: content,
+      isCompleted: !completion,
+    });
+    getTodos();
   };
   const handleDelete = async () => {
     const res = await deleteTodosAxios(id);

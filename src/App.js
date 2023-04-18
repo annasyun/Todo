@@ -1,11 +1,13 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Todo from "./pages/Todo";
+import AllTodo from "./pages/AllTodo";
+import CompletedTodo from "./pages/CompletedTodo";
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Todo />} />
+      <Route path="/" element={<AllTodo />} />
+      <Route path="/completion" element={<CompletedTodo />} />
     </Routes>
   );
 }
