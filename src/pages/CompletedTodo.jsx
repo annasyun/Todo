@@ -3,6 +3,7 @@ import { getTodosAxios } from "../api/todos";
 import NewTodoForm from "../components/Form/NewTodoForm";
 import Header from "../components/Header/Header";
 import TodoList from "../components/TodoList";
+import Wrapper from "../components/Wrapper/Wrapper";
 
 export default function CompletedTodo() {
   const [completedTodos, setCompletedTodos] = useState([]);
@@ -18,13 +19,12 @@ export default function CompletedTodo() {
 
   console.log(completedTodos);
   return (
-    <div>
-      완료됐당!
-      <Header title={"CompletedTodo"} />
+    <Wrapper>
+      <Header title={"CompletedTodo"} place={"completed"} />
       <main>
         <TodoList getTodos={getTodos} todoList={completedTodos} />
         <NewTodoForm getTodos={getTodos} />
       </main>
-    </div>
+    </Wrapper>
   );
 }

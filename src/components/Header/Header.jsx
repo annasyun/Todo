@@ -1,7 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import styles from "./Header.module.css";
+import { BsFillMoonFill } from "react-icons/bs";
 
-export default function Header({ title }) {
+export default function Header({ title, place }) {
   const navigate = useNavigate();
 
   const NavigateToAll = () => {
@@ -17,14 +19,30 @@ export default function Header({ title }) {
   };
 
   return (
-    <header>
+    <header className={styles["header-app"]}>
       {title === "allTodo" && <h1 className="ir">Todo</h1>}
       <h2 className="ir">{title}</h2>
-      <nav>
-        <ul>
-          <li onClick={NavigateToAll}>all</li>
-          <li onClick={NavigateToActive}>active</li>
-          <li onClick={NavigateToCompletion}>completed</li>
+      <BsFillMoonFill />
+      <nav className={styles["navbar"]}>
+        <ul className={styles["list-navbar"]}>
+          <li
+            className={place == "all" ? styles.underlined : ""}
+            onClick={NavigateToAll}
+          >
+            All
+          </li>
+          <li
+            className={place == "active" ? styles.underlined : ""}
+            onClick={NavigateToActive}
+          >
+            Active
+          </li>
+          <li
+            className={place == "completed" ? styles.underlined : ""}
+            onClick={NavigateToCompletion}
+          >
+            Completed
+          </li>
         </ul>
       </nav>
     </header>

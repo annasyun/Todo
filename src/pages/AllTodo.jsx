@@ -3,6 +3,7 @@ import { getTodosAxios } from "../api/todos";
 import TodoList from "../components/TodoList";
 import NewTodoForm from "../components/Form/NewTodoForm";
 import Header from "../components/Header/Header";
+import Wrapper from "../components/Wrapper/Wrapper";
 
 export default function AllTodo() {
   const [todoList, setTodoList] = useState();
@@ -18,12 +19,12 @@ export default function AllTodo() {
   }, []);
 
   return (
-    <>
-      <Header title={"allTodo"} />
+    <Wrapper>
+      <Header title={"allTodo"} place={"all"} />
       <main>
         <TodoList todoList={todoList} getTodos={getTodos} />
         <NewTodoForm getTodos={getTodos} />
       </main>
-    </>
+    </Wrapper>
   );
 }

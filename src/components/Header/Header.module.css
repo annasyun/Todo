@@ -1,0 +1,33 @@
+.header-app {
+  width: 100%;
+  height: 50px;
+  background-color: #f6f6f6;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.navbar {
+  width: 45%;
+}
+
+.list-navbar {
+  display: flex;
+  color: #ef9b45;
+  font-weight: 600;
+}
+
+.list-navbar li + li {
+  margin-left: 1rem;
+}
+
+.list-navbar li:hover {
+  color: #f37901;
+}
+
+.underlined {
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid #b4b4b4;
+}
