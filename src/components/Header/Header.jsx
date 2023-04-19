@@ -3,13 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Header.module.css";
 import { BsFillMoonFill } from "react-icons/bs";
 import { FcIdea } from "react-icons/fc";
-export default function Header({
-  title,
-  place,
-  handleDark,
-  isDark,
-  setIsDark,
-}) {
+export default function Header({ title, place, handleDark, isDark }) {
   const navigate = useNavigate();
 
   const NavigateToAll = () => {

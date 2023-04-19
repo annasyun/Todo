@@ -2,12 +2,12 @@
   "todos": [
     {
       "content": "말씀읽기",
-      "isCompleted": true,
+      "isCompleted": false,
       "id": 6
     },
     {
       "content": "미완료탭이동",
-      "isCompleted": false,
+      "isCompleted": true,
       "id": 7
     },
     {
@@ -19,6 +19,11 @@
       "content": "다크 모드 구현 완료하기!",
       "isCompleted": true,
       "id": 10
+    },
+    {
+      "content": "dark mode fix",
+      "isCompleted": true,
+      "id": 11
     }
   ]
 }

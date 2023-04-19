@@ -1,6 +1,6 @@
 import ListItem from "../ListItem/ListItem";
 
-export default function TodoList({ todoList, getTodos }) {
+export default function TodoList({ todoList, getTodos, isDark }) {
   return (
     <ul>
       {todoList?.map((v) => {
@@ -11,6 +11,7 @@ export default function TodoList({ todoList, getTodos }) {
             id={v.id}
             isCompleted={v.isCompleted}
             getTodos={getTodos}
+            isDark={isDark}
           />
         );
       })}

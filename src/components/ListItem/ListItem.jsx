@@ -3,8 +3,15 @@ import { deleteTodosAxios, updateTodosAxios } from "../../api/todos";
 import styles from "./ListItem.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 
-export default function ListItem({ content, id, getTodos, isCompleted }) {
+export default function ListItem({
+  content,
+  id,
+  getTodos,
+  isCompleted,
+  isDark,
+}) {
   const [completion, SetCompletion] = useState(isCompleted);
   const handleCompletion = async () => {
     SetCompletion(!completion);
@@ -34,7 +41,11 @@ export default function ListItem({ content, id, getTodos, isCompleted }) {
       </div>
 
       <button type="button" className={styles.btn} onClick={handleDelete}>
-        <FontAwesomeIcon  className={styles.bin} icon={faTrash} />
+        {isDark ? (
+          <FontAwesomeIcon icon={faTrashCan} />
+        ) : (
+          <FontAwesomeIcon icon={faTrash} />
+        )}
       </button>
     </li>
   );

@@ -13,7 +13,6 @@ export default function AllTodo() {
     localStorage.setItem("isDark", !isDark);
     setIsDark(!isDark);
   };
-  console.log(isDark);
 
   const [todoList, setTodoList] = useState();
 
@@ -21,7 +20,6 @@ export default function AllTodo() {
     const res = await getTodosAxios();
     setTodoList(res.data);
   };
-  console.log(todoList);
 
   useEffect(() => {
     getTodos();
@@ -31,13 +29,12 @@ export default function AllTodo() {
     <Wrapper>
       <Header
         isDark={isDark}
-        setIsDark={setIsDark}
         handleDark={handleDark}
         title={"allTodo"}
         place={"all"}
       />
       <Main isDark={isDark}>
-        <TodoList todoList={todoList} getTodos={getTodos} />
+        <TodoList todoList={todoList} getTodos={getTodos} isDark={isDark} />
         <NewTodoForm getTodos={getTodos} isDark={isDark} />
       </Main>
     </Wrapper>

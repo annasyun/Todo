@@ -7,6 +7,12 @@ import TodoList from "../components/TodoList/TodoList";
 import Wrapper from "../components/Wrapper/Wrapper";
 
 export default function ActiveTodo() {
+  const [isDark, setIsDark] = useState(false);
+
+  const handleDark = () => {
+    localStorage.setItem("isDark", !isDark);
+    setIsDark(!isDark);
+  };
   const [activeTodos, setActiveTodos] = useState([]);
 
   const getTodos = async () => {
@@ -14,18 +20,21 @@ export default function ActiveTodo() {
     setActiveTodos(res.data.filter((todo) => !todo.isCompleted));
   };
 
-  console.log(activeTodos);
-
   useEffect(() => {
     getTodos();
   }, []);
 
   return (
     <Wrapper>
-      <Header title={"ActiveTodo"} place={"active"} />
-      <Main>
-        <TodoList getTodos={getTodos} todoList={activeTodos} />
-        <NewTodoForm getTodos={getTodos} />
+      <Header
+        title={"ActiveTodo"}
+        place={"active"}
+        isDark={isDark}
+        handleDark={handleDark}
+      />
+      <Main isDark={isDark}>
+        <TodoList getTodos={getTodos} todoList={activeTodos} isDark={isDark} />
+        <NewTodoForm getTodos={getTodos} isDark={isDark} />
       </Main>
     </Wrapper>
   );
