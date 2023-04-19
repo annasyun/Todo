@@ -22,7 +22,7 @@ export default function ListItem({
     getTodos();
   };
   const handleDelete = async () => {
-    const res = await deleteTodosAxios(id);
+    await deleteTodosAxios(id);
 
     getTodos();
   };

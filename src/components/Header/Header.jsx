@@ -32,19 +32,19 @@ export default function Header({ title, place, handleDark, isDark }) {
       <nav className={styles["navbar"]}>
         <ul className={styles["list-navbar"]}>
           <li
-            className={place == "all" ? styles.underlined : ""}
+            className={place === "all" ? styles.underlined : ""}
             onClick={NavigateToAll}
           >
             All
           </li>
           <li
-            className={place == "active" ? styles.underlined : ""}
+            className={place === "active" ? styles.underlined : ""}
             onClick={NavigateToActive}
           >
             Active
           </li>
           <li
-            className={place == "completed" ? styles.underlined : ""}
+            className={place === "completed" ? styles.underlined : ""}
             onClick={NavigateToCompletion}
           >
             Completed

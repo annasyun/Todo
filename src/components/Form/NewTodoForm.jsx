@@ -7,7 +7,7 @@ export default function NewTodoForm({ getTodos, isDark }) {
   const [todoValue] = useInput("");
 
   const handleSubmit = async () => {
-    const res = await postTodosAxios({
+    await postTodosAxios({
       isCompleted: false,
       content: todoValue.value,
     });

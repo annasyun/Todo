@@ -24,6 +24,11 @@
       "content": "dark mode fix",
       "isCompleted": true,
       "id": 11
+    },
+    {
+      "isCompleted": false,
+      "content": "빌드하기",
+      "id": 12
     }
   ]
 }
