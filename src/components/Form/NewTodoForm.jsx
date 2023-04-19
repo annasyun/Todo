@@ -3,7 +3,7 @@ import { postTodosAxios } from "../../api/todos";
 import useInput from "../../hooks/useInput";
 import styles from "./Form.module.css";
 
-export default function NewTodoForm({ getTodos }) {
+export default function NewTodoForm({ getTodos, isDark }) {
   const [todoValue] = useInput("");
 
   const handleSubmit = async () => {
@@ -17,14 +17,14 @@ export default function NewTodoForm({ getTodos }) {
 
   return (
     <form
-      className={styles.form}
+      className={`${styles.form} ${isDark ? styles["dark-mode"] : ""}`}
       action=""
       method="get"
       onSubmit={handleSubmit}
     >
       <label htmlFor="inp-text">
         <input
-        className={styles.text}
+          className={styles.text}
           id="inp-text"
           value={todoValue.value}
           onChange={todoValue.onchange}
@@ -33,7 +33,12 @@ export default function NewTodoForm({ getTodos }) {
         />
       </label>
       <label htmlFor="inp-btn">
-        <input className={styles.btn} id="inp-btn" type="submit" value={"Add"} />
+        <input
+          className={styles.btn}
+          id="inp-btn"
+          type="submit"
+          value={"Add"}
+        />
       </label>
     </form>
   );

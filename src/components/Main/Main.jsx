@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Main.module.css";
 
-export default function Main({ children }) {
-  return <main className={styles["main"]}>{children}</main>;
+export default function Main({ children, isDark }) {
+  return (
+    <main className={`${styles["main"]} ${isDark ? styles["dark-mode"] : ""}`}>
+      {children}
+    </main>
+  );
 }

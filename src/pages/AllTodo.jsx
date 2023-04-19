@@ -7,6 +7,14 @@ import Wrapper from "../components/Wrapper/Wrapper";
 import Main from "../components/Main/Main";
 
 export default function AllTodo() {
+  const [isDark, setIsDark] = useState(false);
+
+  const handleDark = () => {
+    localStorage.setItem("isDark", !isDark);
+    setIsDark(!isDark);
+  };
+  console.log(isDark);
+
   const [todoList, setTodoList] = useState();
 
   const getTodos = async () => {
@@ -21,10 +29,16 @@ export default function AllTodo() {
 
   return (
     <Wrapper>
-      <Header title={"allTodo"} place={"all"} />
-      <Main>
+      <Header
+        isDark={isDark}
+        setIsDark={setIsDark}
+        handleDark={handleDark}
+        title={"allTodo"}
+        place={"all"}
+      />
+      <Main isDark={isDark}>
         <TodoList todoList={todoList} getTodos={getTodos} />
-        <NewTodoForm getTodos={getTodos} />
+        <NewTodoForm getTodos={getTodos} isDark={isDark} />
       </Main>
     </Wrapper>
   );
