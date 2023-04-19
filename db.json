@@ -1,23 +1,8 @@
 {
   "todos": [
     {
-      "content": "저녁먹기",
-      "isCompleted": true,
-      "id": 3
-    },
-    {
-      "content": "헤더분리",
-      "isCompleted": true,
-      "id": 4
-    },
-    {
-      "content": "폼 분리",
-      "isCompleted": true,
-      "id": 5
-    },
-    {
-      "isCompleted": false,
       "content": "말씀읽기",
+      "isCompleted": false,
       "id": 6
     },
     {

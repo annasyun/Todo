@@ -1,4 +1,4 @@
-import ListItem from "./ListItem/ListItem";
+import ListItem from "../ListItem/ListItem";
 
 export default function TodoList({ todoList, getTodos }) {
   return (

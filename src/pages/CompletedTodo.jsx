@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { getTodosAxios } from "../api/todos";
 import NewTodoForm from "../components/Form/NewTodoForm";
 import Header from "../components/Header/Header";
-import TodoList from "../components/TodoList";
+import Main from "../components/Main/Main";
+import TodoList from "../components/TodoList/TodoList";
 import Wrapper from "../components/Wrapper/Wrapper";
 
 export default function CompletedTodo() {
@@ -21,10 +22,10 @@ export default function CompletedTodo() {
   return (
     <Wrapper>
       <Header title={"CompletedTodo"} place={"completed"} />
-      <main>
+      <Main>
         <TodoList getTodos={getTodos} todoList={completedTodos} />
         <NewTodoForm getTodos={getTodos} />
-      </main>
+      </Main>
     </Wrapper>
   );
 }
