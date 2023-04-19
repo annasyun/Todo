@@ -12,8 +12,13 @@
     },
     {
       "isCompleted": false,
-      "content": "다크모드 구현",
-      "id": 8
+      "content": "추가 버튼 디자인",
+      "id": 9
+    },
+    {
+      "isCompleted": false,
+      "content": "다크 모드 구현 완료하기!",
+      "id": 10
     }
   ]
 }

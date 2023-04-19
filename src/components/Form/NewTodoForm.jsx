@@ -1,6 +1,7 @@
 import React from "react";
 import { postTodosAxios } from "../../api/todos";
 import useInput from "../../hooks/useInput";
+import styles from "./Form.module.css";
 
 export default function NewTodoForm({ getTodos }) {
   const [todoValue] = useInput("");
@@ -15,17 +16,24 @@ export default function NewTodoForm({ getTodos }) {
   };
 
   return (
-    <form action="" method="get" onSubmit={handleSubmit}>
+    <form
+      className={styles.form}
+      action=""
+      method="get"
+      onSubmit={handleSubmit}
+    >
       <label htmlFor="inp-text">
         <input
+        className={styles.text}
           id="inp-text"
           value={todoValue.value}
           onChange={todoValue.onchange}
           type="text"
+          placeholder="Add Todo"
         />
       </label>
       <label htmlFor="inp-btn">
-        <input id="inp-btn" type="submit" value={"add"} />
+        <input className={styles.btn} id="inp-btn" type="submit" value={"Add"} />
       </label>
     </form>
   );
